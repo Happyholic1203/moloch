@@ -123,6 +123,9 @@ indices.fielddata.cache.size: 40%
 http.compression: true
 script.disable_dynamic: true
 
+script.engine.groovy.inline.aggs: on
+script.engine.groovy.inline.update: on
+
 # These settings directly affect the performance of index and search operations
 # in your cluster. Assuming you have enough machines to hold shards and
 # replicas, the rule of thumb is:
