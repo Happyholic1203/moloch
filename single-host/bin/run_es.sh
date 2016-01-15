@@ -8,5 +8,8 @@ ulimit -a
 # export JAVA_OPTS="-XX:+UseCompressedOops"
 export ES_HOSTNAME=`hostname -s`a
 
-# Increase memory
-ES_HEAP_SIZE=_ESMEM_ bin/elasticsearch -Des.config=${TDIR}/etc/elasticsearch.yml -d
+if [ -z "$ES_HEAP_SIZE" ]; then
+    export ES_HEAP_SIZE=_ESMEM_
+fi
+
+bin/elasticsearch -Des.config=${TDIR}/etc/elasticsearch.yml -d
